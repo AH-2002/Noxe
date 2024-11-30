@@ -65,8 +65,7 @@ export default function Login(props) {
   }
 
   return (
-    <>
-      <div className="w-75 mx-auto mt-5">
+      <div className="w-75 mx-auto mt-5 vh-100">
         <h2>Login now  <span style={{fontSize:"10px"}}>(try email : "eve.holt@reqres.in" and password : "pistol")</span> </h2>
         {errorList.map((errorMessage, i) => errorMessage.path[0] === 'password' ? <div key={i} className="alert alert-danger">Password Invalid</div> : <div key={i} className="alert alert-danger">{errorMessage.message}</div>)}
         {error ? <div className="alert py-2 alert-danger">{error}</div> : ""}
@@ -82,6 +81,5 @@ export default function Login(props) {
           </button>
         </form>
       </div>
-    </>
   )
 }
