@@ -55,7 +55,7 @@ function App() {
 
     }
     else {
-      return <Navigate to='/login/' />
+      return <Navigate to='/login' />
 
     }
   }
