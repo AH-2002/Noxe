@@ -2,9 +2,9 @@ import React from 'react'
 
 export default function About() {
   return (
-    <>
+    <div className='vh-100'>
     <h2 className='text-center p-4'>About Us</h2>
-      <div className='d-flex justify-content-center align-items-start vh-100'>
+      <div className='d-flex justify-content-center align-items-start'>
         <p style={{ lineHeight: "1.6", width: "90ch" }}>
           Welcome to Noxe, your ultimate destination for discovering the latest and most popular movies and TV shows from around the world! Our platform brings together a curated collection of trending films, fan-favorite stars, and captivating TV series to keep you entertained.
 
@@ -19,6 +19,6 @@ export default function About() {
 
         </p>
       </div>
-    </>
+    </div>
   )
 }
