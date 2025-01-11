@@ -22,14 +22,16 @@ export default function TvDetails() {
                     <img className='w-100' src={'https://image.tmdb.org/t/p/w500' + tvDetails.poster_path} alt="" />
                 </div>
                 <div className="col-md-9">
-                    <h2>{tvDetails.title}</h2>
+                    <h2>{tvDetails.name}</h2>
                     <p className='par py-3'>{tvDetails.overview}</p>
                     <ul>
 
-                        <li>Budget : {tvDetails.budget}</li>
-                        <li>vote Rate : {tvDetails.vote_average}</li>
+                        <li>Status : {tvDetails.status}</li>
+                        <li> Country : {tvDetails.production_countries[0].name}</li>
                         <li>Popularity : {tvDetails.popularity}</li>
-                        <li>Vote Count : {tvDetails.vote_count}</li>
+                        <li>Number of episodes : {tvDetails.number_of_episodes}</li>
+                        <li>Seasons : {tvDetails.number_of_seasons}</li>
+
 
                     </ul>
                 </div>
