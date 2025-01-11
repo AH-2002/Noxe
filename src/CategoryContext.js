@@ -23,7 +23,7 @@ export default function CategoryContextProvider(props) {
         getTrending(1, 'person', setTrendingPeople);
     }, [])
 
-    return <CatContext.Provider value={{ trendingMovies, trendingPeople, trendingTvs, nums }}>
+    return <CatContext.Provider value={{ trendingMovies, trendingPeople, trendingTvs, nums, getTrending, setTrendingMovies,setTrendingTvs,setTrendingPeople }}>
         {props.children}
     </CatContext.Provider>
 }

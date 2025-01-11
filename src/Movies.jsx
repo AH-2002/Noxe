@@ -5,7 +5,7 @@ import { CatContext } from './CategoryContext';
 
 export default function Movies() {
 
-let {nums,trendingMovies,getTrending}=useContext(CatContext)
+  let { nums, trendingMovies, getTrending,setTrendingMovies } = useContext(CatContext)
   return (
     <div>
       {trendingMovies ? <div className="row p-5">
@@ -29,7 +29,7 @@ let {nums,trendingMovies,getTrending}=useContext(CatContext)
             </a>
           </li>
           {
-            nums.map((pageNum) => < li onClick={() => getTrending(pageNum)} key={pageNum} className="page-item"><a className="page-link">{pageNum}</a></li>)
+            nums.map((pageNum) => < li onClick={() => getTrending(pageNum, 'movie', setTrendingMovies)} key={pageNum} className="page-item"><a className="page-link">{pageNum}</a></li>)
           }
           <li className="page-item">
             <a className="page-link" href="#" aria-label="Next">

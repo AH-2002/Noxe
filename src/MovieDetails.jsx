@@ -11,7 +11,6 @@ export default function MovieDetails() {
         let response = await axios.get(`https://api.themoviedb.org/3/movie/${id}?api_key=b5016f6024987d846448b401b25e32fd&language=en-US&page=1`)
         let { data } = response;
         setMovieDetails(data)
-        console.log(data)
     }
     useEffect(() => {
         getMovieDeatails(params.id);

@@ -39,8 +39,10 @@ export default function Home() {
         </div>
         {trendingTvs.map((tv, i) => <div key={i} className='col-md-2'>
           <div className='tv mb-4 text-center'>
-            <img className='w-100 rounded' src={'https://image.tmdb.org/t/p/w500' + tv.poster_path} alt="" />
-            <h3 className='h6 p-2'>{tv.name}</h3>
+            <Link to={`/tvdetails/${tv.id}`} className='text-decoration-none text-light'>
+              <img className='w-100 rounded' src={'https://image.tmdb.org/t/p/w500' + tv.poster_path} alt="" />
+              <h3 className='h6 p-2'>{tv.name}</h3>
+            </Link>
           </div>
         </div>
         )}
@@ -55,10 +57,13 @@ export default function Home() {
             <div className="brdr mt-4"></div>
           </div>
         </div>
-        {trendingPeople.map((preson, i) => <div key={i} className='col-md-2'>
+        {trendingPeople.map((person, i) => <div key={i} className='col-md-2'>
           <div className='person mb-4 text-center'>
-            <img className='w-100 rounded' src={'https://image.tmdb.org/t/p/w500' + preson.profile_path} alt="" />
-            <h3 className='h6 p-2'>{preson.name}</h3>
+            <Link to={`/peopledetails/${person.id}`} className='text-decoration-none text-light'>
+              <img className='w-100 rounded' src={'https://image.tmdb.org/t/p/w500' + person.profile_path} alt="" />
+              <h3 className='h6 p-2'>{person.name}</h3>
+            </Link>
+
           </div>
         </div>
         )}

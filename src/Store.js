@@ -25,7 +25,7 @@ export default function MoviesContextProvider(props) {
 
     }, [])
 
-    return <movieContext.Provider value={{trendingMovies, trendingPeople, trendingTvs}}>
+    return <movieContext.Provider value={{trendingMovies, trendingPeople, trendingTvs,setTrendingMovies}}>
         {props.children}
     </movieContext.Provider>
 }

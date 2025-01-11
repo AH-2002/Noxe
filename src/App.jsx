@@ -14,9 +14,11 @@ import Contacts from './Contacts';
 import { useEffect, useState } from 'react';
 import { jwtDecode } from 'jwt-decode';
 import MovieDetails from './MovieDetails';
+import PeopleDetails from './PeopleDetails';
+
 import MoviesContextProvider from './Store';
 import CategoryContextProvider from './CategoryContext';
-
+import TvDetails from './TvDetails';
 
 function App() {
   let navigate = useNavigate();
@@ -32,7 +34,6 @@ function App() {
     setUserData(null);
     localStorage.removeItem('userToken');
     navigate('/login')
-
   }
 
   //component did mount
@@ -59,7 +60,7 @@ function App() {
 
     }
   }
-
+  
 
   return (
     <div>
@@ -72,13 +73,19 @@ function App() {
               <Route path="home" element={<ProtectedRoute><Home /></ProtectedRoute>} />
               <Route path="movies" element={<ProtectedRoute><Movies /></ProtectedRoute>} />
               <Route path="tv" element={<ProtectedRoute><TV /></ProtectedRoute>} />
-              <Route path="people" element={<People />} />
+              <Route path="people" element={<ProtectedRoute> <People /> </ProtectedRoute>} />
               <Route path="login" element={<ProtectedRoute><Login saveUserData={saveUserData} /></ProtectedRoute>} />
               <Route path="register" element={<ProtectedRoute><Register /></ProtectedRoute>} />
               <Route path="about" element={<ProtectedRoute><About /></ProtectedRoute>} />
               <Route path="contacts" element={<ProtectedRoute><Contacts /></ProtectedRoute>} />
               <Route path="moviedetails" element={<ProtectedRoute><MovieDetails /></ProtectedRoute>} >
                 <Route path=":id" element={<ProtectedRoute><MovieDetails /></ProtectedRoute>} />
+              </Route>
+              <Route path="tvdetails" element={<ProtectedRoute><TvDetails /></ProtectedRoute>} >
+                <Route path=":id" element={<ProtectedRoute><TvDetails /></ProtectedRoute>} />
+              </Route>
+              <Route path="peopledetails" element={<ProtectedRoute><PeopleDetails /></ProtectedRoute>} >
+                <Route path=":id" element={<ProtectedRoute><PeopleDetails /></ProtectedRoute>} />
               </Route>
               <Route path="*" element={<NotFound />} />
             </Routes>

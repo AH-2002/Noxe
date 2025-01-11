@@ -6,15 +6,15 @@ import { CatContext } from './CategoryContext';
 
 export default function People() {
 
-  let {nums,trendingPeople,getTrending}=useContext(CatContext)
+  let { nums, trendingPeople, getTrending, setTrendingPeople } = useContext(CatContext)
 
 
   return (
     <div>
       {trendingPeople ? <div className="row p-5">
         {trendingPeople.map((person, i) => <div key={i} className='col-md-2'>
-          <div className='movie mb-4 text-center'>
-            <Link to={`/moviedetails/${person.id}`} className='text-decoration-none text-light'>
+          <div className='people mb-4 text-center'>
+            <Link to={`/peopledetails/${person.id}`} className='text-decoration-none text-light'>
               <img className='w-100 rounded' src={'https://image.tmdb.org/t/p/w500' + person.profile_path} alt="" />
               <h3 className='h6 p-2'>{person.name}</h3>
             </Link>
@@ -32,7 +32,7 @@ export default function People() {
             </a>
           </li>
           {
-            nums.map((pageNum) => < li onClick={() => getTrending(pageNum)} key={pageNum} className="page-item"><a className="page-link">{pageNum}</a></li>)
+            nums.map((pageNum) => < li onClick={() => getTrending(pageNum, 'person', setTrendingPeople)} key={pageNum} className="page-item"><a className="page-link">{pageNum}</a></li>)
           }
           <li className="page-item">
             <a className="page-link" href="#" aria-label="Next">
